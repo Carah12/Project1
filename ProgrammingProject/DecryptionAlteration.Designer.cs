@@ -163,6 +163,7 @@
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.Size = new System.Drawing.Size(470, 150);
             this.dgvDisplay.TabIndex = 19;
+            this.dgvDisplay.SelectionChanged += new System.EventHandler(this.dgvDisplay_SelectionChanged);
             // 
             // lblPassword
             // 
@@ -290,9 +291,10 @@
             // lblUserInfo
             // 
             this.lblUserInfo.AutoSize = true;
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.Location = new System.Drawing.Point(854, 52);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(84, 13);
+            this.lblUserInfo.Size = new System.Drawing.Size(128, 17);
             this.lblUserInfo.TabIndex = 36;
             this.lblUserInfo.Text = "User Information";
             // 
