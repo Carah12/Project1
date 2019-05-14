@@ -20,7 +20,7 @@ namespace ProgrammingProject
         BindingSource bs = new BindingSource();
         DBAccess dba = new DBAccess();
         User user = new User();
-
+        Message message = new Message();
         List<User> popUsers = new List<User>();
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -159,6 +159,21 @@ namespace ProgrammingProject
         private void btnDecryption_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSeeUsers_Click(object sender, EventArgs e)
+        {
+            popUsers = user.PopulateUsers();
+            bs.DataSource = popUsers;
+            dgvDisplay.DataSource = bs;
+        }
+
+        private void btnSeeMessage_Click(object sender, EventArgs e)
+        {
+            List<Message> messageList = new List<Message>();
+            messageList = message.PopulateMessage();
+            bs.DataSource = messageList;
+            dgvDisplay.DataSource = bs;
         }
     }
 }
