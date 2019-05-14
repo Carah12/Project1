@@ -67,6 +67,7 @@
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDecryption
             // 
@@ -146,6 +147,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Remove User";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 

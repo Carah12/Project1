@@ -60,5 +60,15 @@ namespace ProgrammingProject
 
             conn.Close();
         }
+
+        public void DeleteUser(int id)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            conn.Open();
+            SqlCommand command = new SqlCommand("ProcDelete", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@userid", id);
+            command.ExecuteNonQuery();
+        }
     }
 }
