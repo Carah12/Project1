@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
@@ -38,16 +39,16 @@ namespace binaryToTextTest
                 MessageBox.Show(ioe.Message);
             }
             finally
-            {
-                
+            {   
                 reader.Close();
                 //stream.Flush();
                 stream.Close();
             }
             return rawdata;
         }
-        public void WriteToFile(string dataToWrite, string filename)
+        public void WriteToFile(string filename)
         {
+            string dataToWrite = DateTime.Now.ToShortDateString();
             stream = new FileStream(filename, FileMode.Open, FileAccess.Write);
             writer = new StreamWriter(stream);
 
@@ -74,5 +75,6 @@ namespace binaryToTextTest
                 stream.Close();
             }
         }
+        
     }
 }
