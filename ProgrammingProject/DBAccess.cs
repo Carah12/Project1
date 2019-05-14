@@ -94,5 +94,20 @@ namespace ProgrammingProject
             conn.Close();
            
         }
+
+        public void InsertMessage(ArrayList data)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            conn.Open();
+            SqlCommand command = new SqlCommand("ProcInsertMessage", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@time", data[0]);
+            command.Parameters.AddWithValue("@userid", data[1]);
+            command.Parameters.AddWithValue("@message", data[2]);
+           
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
     }
 }

@@ -56,6 +56,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUserInfo = new System.Windows.Forms.Label();
+            this.btnSeeUsers = new System.Windows.Forms.Button();
+            this.btnSeeMessage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,16 +75,17 @@
             // 
             this.btnDecryption.Location = new System.Drawing.Point(657, 109);
             this.btnDecryption.Name = "btnDecryption";
-            this.btnDecryption.Size = new System.Drawing.Size(82, 23);
+            this.btnDecryption.Size = new System.Drawing.Size(96, 23);
             this.btnDecryption.TabIndex = 14;
             this.btnDecryption.Text = "Decrypt File";
             this.btnDecryption.UseVisualStyleBackColor = true;
+            this.btnDecryption.Click += new System.EventHandler(this.btnDecryption_Click);
             // 
             // btnPastLogs
             // 
             this.btnPastLogs.Location = new System.Drawing.Point(657, 82);
             this.btnPastLogs.Name = "btnPastLogs";
-            this.btnPastLogs.Size = new System.Drawing.Size(82, 23);
+            this.btnPastLogs.Size = new System.Drawing.Size(96, 23);
             this.btnPastLogs.TabIndex = 13;
             this.btnPastLogs.Text = "Past Logs";
             this.btnPastLogs.UseVisualStyleBackColor = true;
@@ -133,7 +136,7 @@
             // 
             this.btnAddUser.Location = new System.Drawing.Point(657, 138);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(82, 23);
+            this.btnAddUser.Size = new System.Drawing.Size(96, 23);
             this.btnAddUser.TabIndex = 16;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -143,7 +146,7 @@
             // 
             this.btnDelete.Location = new System.Drawing.Point(657, 203);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 23);
+            this.btnDelete.Size = new System.Drawing.Size(96, 23);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Remove User";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -153,7 +156,7 @@
             // 
             this.btnUpdate.Location = new System.Drawing.Point(657, 172);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(96, 23);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -301,11 +304,33 @@
             this.lblUserInfo.TabIndex = 36;
             this.lblUserInfo.Text = "User Information";
             // 
+            // btnSeeUsers
+            // 
+            this.btnSeeUsers.Location = new System.Drawing.Point(657, 236);
+            this.btnSeeUsers.Name = "btnSeeUsers";
+            this.btnSeeUsers.Size = new System.Drawing.Size(96, 23);
+            this.btnSeeUsers.TabIndex = 37;
+            this.btnSeeUsers.Text = "Show Users";
+            this.btnSeeUsers.UseVisualStyleBackColor = true;
+            this.btnSeeUsers.Click += new System.EventHandler(this.btnSeeUsers_Click);
+            // 
+            // btnSeeMessage
+            // 
+            this.btnSeeMessage.Location = new System.Drawing.Point(657, 265);
+            this.btnSeeMessage.Name = "btnSeeMessage";
+            this.btnSeeMessage.Size = new System.Drawing.Size(96, 23);
+            this.btnSeeMessage.TabIndex = 38;
+            this.btnSeeMessage.Text = "Show Messages";
+            this.btnSeeMessage.UseVisualStyleBackColor = true;
+            this.btnSeeMessage.Click += new System.EventHandler(this.btnSeeMessage_Click);
+            // 
             // DecryptionAlteration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 450);
+            this.Controls.Add(this.btnSeeMessage);
+            this.Controls.Add(this.btnSeeUsers);
             this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
@@ -373,5 +398,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUserInfo;
+        private System.Windows.Forms.Button btnSeeUsers;
+        private System.Windows.Forms.Button btnSeeMessage;
     }
 }
