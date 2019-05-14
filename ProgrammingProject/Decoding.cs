@@ -40,6 +40,22 @@ namespace binaryToTextTest
                 messageDecrypted = messageDecrypted + BinaryToString(line);
             }
             return messageDecrypted;
+        }        
+        //This method will return the first letter of every word and check if it is a palindrome or not
+        public static bool IsPalindrome(string message)
+        {
+            string dataToReturn = "";
+            string[] stringSplit = message.Split();
+            foreach (string item in stringSplit)
+            {
+                dataToReturn = dataToReturn + item.Substring(0, 1);
+            }
+            string first = dataToReturn.Substring(0,dataToReturn.Length / 2);
+            char[] charArr = dataToReturn.ToCharArray();
+            Array.Reverse(charArr);
+            string temp = new string(charArr);
+            string second = temp.Substring(0,temp.Length / 2);
+            return first.Equals(second);
         }
     }
 }
