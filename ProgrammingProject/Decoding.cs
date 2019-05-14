@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Mail;
+using System.Windows.Forms;
 //01010100 01100101 01110011 01110100 => 'T' + 'e' + 's' + 't'
 
 namespace ProgrammingProject
@@ -94,15 +95,15 @@ namespace ProgrammingProject
                     mail.From = new MailAddress("testdummyprg@gmail.com");
                     mail.To.Add("anrichvanzyl99@gmail.com");
                     mail.To.Add("your mail here");
-                    mail.Subject = "Test Mail";
-                    mail.Body = "This is for testing SMTP mail from GMAIL";
+                    mail.Subject = "The Secret Message";
+                    mail.Body = "This is where the decrpyted message goes";
 
                     SmtpServer.Port = 587;
                     SmtpServer.Credentials = new System.Net.NetworkCredential("testdummyprg@gmail.com", "incognit0");
                     SmtpServer.EnableSsl = true;
 
                     SmtpServer.Send(mail);
-                    MessageBox.Show("mail Send");
+                    MessageBox.Show("The Message has been sent.");
                 }
                 catch (Exception ex)
                 {

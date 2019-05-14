@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAccess.cs" />
+    <Compile Include="Decoding.cs" />
     <Compile Include="Decryption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +59,7 @@
     <Compile Include="DecryptionAlteration.Designer.cs">
       <DependentUpon>DecryptionAlteration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filehandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
