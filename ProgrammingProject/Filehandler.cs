@@ -5,7 +5,7 @@ using System.IO;
 
 namespace binaryToTextTest
 {
-    class Filehandler
+    public class Filehandler
     {
         FileStream stream;
         StreamReader reader;
