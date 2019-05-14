@@ -157,6 +157,7 @@
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvDisplay
             // 

@@ -70,5 +70,29 @@ namespace ProgrammingProject
             command.Parameters.AddWithValue("@userid", id);
             command.ExecuteNonQuery();
         }
+
+        public void UpdateUser(int id, ArrayList change)
+        {
+            
+            SqlConnection conn = new SqlConnection(connection.ToString());
+
+            conn.Open();
+            SqlCommand command = new SqlCommand("ProcUpdate", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@name", change[0]);
+            command.Parameters.AddWithValue("@surname", change[1]);
+            command.Parameters.AddWithValue("@age", change[2]);
+            command.Parameters.AddWithValue("@rank", change[3]);
+            command.Parameters.AddWithValue("@idNumber", change[4]);
+            command.Parameters.AddWithValue("@username", change[5]);
+            command.Parameters.AddWithValue("@password", change[6]);
+            command.Parameters.AddWithValue("@isAdmin", change[7]);
+            command.Parameters.AddWithValue("@userid", id);
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+           
+        }
     }
 }

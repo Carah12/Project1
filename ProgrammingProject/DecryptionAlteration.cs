@@ -119,5 +119,41 @@ namespace ProgrammingProject
             dgvDisplay.DataSource = null;
             dgvDisplay.DataSource = bs;
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ArrayList arrUpdate = new ArrayList();
+            bool isAdmin;
+
+            if (chkIsAdmin.Checked)
+            {
+                isAdmin = true;
+            }
+            else
+            {
+                isAdmin = false;
+            }
+
+            arrUpdate.Add(txtName.Text);
+            arrUpdate.Add(txtSurname.Text);
+            arrUpdate.Add(int.Parse(txtAge.Text));
+            arrUpdate.Add(txtRank.Text);
+            arrUpdate.Add(txtIDNumber.Text);
+            arrUpdate.Add(txtUsername.Text);
+            arrUpdate.Add(txtPassword.Text);
+            arrUpdate.Add(isAdmin);
+            dba.UpdateUser(ID, arrUpdate);
+
+            popUsers = user.PopulateUsers();
+            bs.DataSource = popUsers;
+            dgvDisplay.DataSource = bs;
+
+
+            dgvDisplay.DataSource = null;
+            dgvDisplay.DataSource = bs;
+
+            
+
+        }
     }
 }
