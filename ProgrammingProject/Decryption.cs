@@ -66,9 +66,9 @@ namespace ProgrammingProject
                     //
 	            }
 	        }
-            catch(Exception e)
+            catch(Exception r)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(r.Message);
             }
             finally
             {
