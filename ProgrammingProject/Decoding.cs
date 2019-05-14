@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Net.Mail;
 //01010100 01100101 01110011 01110100 => 'T' + 'e' + 's' + 't'
 
 namespace binaryToTextTest
@@ -40,7 +41,7 @@ namespace binaryToTextTest
                 messageDecrypted = messageDecrypted + BinaryToString(line);
             }
             return messageDecrypted;
-        }        
+        }
         //This method will return the first letter of every word and check if it is a palindrome or not
         public static bool IsPalindrome(string message)
         {
@@ -50,12 +51,64 @@ namespace binaryToTextTest
             {
                 dataToReturn = dataToReturn + item.Substring(0, 1);
             }
-            string first = dataToReturn.Substring(0,dataToReturn.Length / 2);
+            string first = dataToReturn.Substring(0, dataToReturn.Length / 2);
             char[] charArr = dataToReturn.ToCharArray();
             Array.Reverse(charArr);
             string temp = new string(charArr);
-            string second = temp.Substring(0,temp.Length / 2);
+            string second = temp.Substring(0, temp.Length / 2);
             return first.Equals(second);
+        }
+        //Method for the cipher
+        public static string Caesar(string value, int key)
+        {
+            char[] buffer = value.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                // Defines the letter
+                char letter = buffer[i];
+                // Adds shifts to all the letters
+                letter = (char)(letter + key);
+                if (letter > 'z')
+                {
+                    letter = (char)(letter - 26);
+                }
+                else if (letter < 'a')
+                {
+                    letter = (char)(letter + 26);
+                }
+                // Stores it
+                buffer[i] = letter;
+            }
+            return new string(buffer);
+        }
+        //Method to send email (used after the IsPalindrome when checking t/f)
+        public static void SendEmail(bool isPalindrome)
+        {
+            if (isPalindrome)
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                    mail.From = new MailAddress("testdummyprg@gmail.com");
+                    mail.To.Add("anrichvanzyl99@gmail.com");
+                    mail.To.Add("your mail here");
+                    mail.Subject = "Test Mail";
+                    mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                    SmtpServer.Port = 587;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("testdummyprg@gmail.com", "incognit0");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("mail Send");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
     }
 }

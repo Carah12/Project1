@@ -39,6 +39,7 @@ namespace binaryToTextTest
             }
             finally
             {
+                
                 reader.Close();
                 //stream.Flush();
                 stream.Close();
