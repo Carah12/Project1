@@ -33,7 +33,7 @@ namespace ProgrammingProject
         public static string FileToString(string filename)
         {
             string messageDecrypted = "";
-            Filehandler fh = new Filehandler();
+            FileHandler fh = new FileHandler();
             List<string> myList = new List<string>();
             myList = fh.Readfile(filename);
 

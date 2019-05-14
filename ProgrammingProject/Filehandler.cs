@@ -15,7 +15,7 @@ namespace ProgrammingProject
         StreamReader reader;
         StreamWriter writer;
 
-        public Filehandler()
+        public FileHandler()
         {
 
         }

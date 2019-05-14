@@ -21,6 +21,7 @@ namespace ProgrammingProject
         }
 
 
+        FileHandler fh = new FileHandler();
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -29,13 +30,13 @@ namespace ProgrammingProject
 
         private void btnDecryption_Click_1(object sender, EventArgs e)
         {
+            string filename = txtBrowse.Text;
             try 
 	        {	        
-		        string filename = txtBrowse.Text;
+		        
                 if (filename != null)
 	            {
                     string messageDecrypted = "";
-                    Filehandler fh = new Filehandler();
                     List<string> myList = new List<string>();
                     myList = fh.Readfile(filename);
                     int shiftKey = 1;
@@ -73,6 +74,11 @@ namespace ProgrammingProject
             {
                 fh.WriteToFile(filename);
             }
+        }
+
+        private void Decryption_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
