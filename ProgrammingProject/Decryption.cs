@@ -31,6 +31,8 @@ namespace ProgrammingProject
             string filename = txtBrowse.Text;
             Filehandler fh = new Filehandler();
             Decoding.
+
+
         }
     }
 }

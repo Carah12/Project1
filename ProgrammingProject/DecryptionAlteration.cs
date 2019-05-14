@@ -155,5 +155,10 @@ namespace ProgrammingProject
             
 
         }
+
+        private void btnDecryption_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
