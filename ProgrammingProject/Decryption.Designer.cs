@@ -97,6 +97,7 @@
             this.btnDecryption.TabIndex = 6;
             this.btnDecryption.Text = "Decrypt File";
             this.btnDecryption.UseVisualStyleBackColor = true;
+            this.btnDecryption.Click += new System.EventHandler(this.btnDecryption_Click_1);
             // 
             // btnExit
             // 
