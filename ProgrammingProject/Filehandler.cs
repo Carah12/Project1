@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
-namespace binaryToTextTest
+namespace ProgrammingProject
 {
     public class Filehandler
     {
@@ -11,7 +11,10 @@ namespace binaryToTextTest
         StreamReader reader;
         StreamWriter writer;
 
-        public Filehandler() { }
+        public Filehandler()
+        {
+
+        }
 
         public List<string> Readfile(string filename)
         {

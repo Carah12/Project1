@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ProgrammingProject
 {
     public partial class Decryption : Form
@@ -22,13 +23,14 @@ namespace ProgrammingProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnDecryption_Click_1(object sender, EventArgs e)
         {
             string filename = txtBrowse.Text;
-            FileHand
+            Filehandler fh = new Filehandler();
+            Decoding.
         }
     }
 }

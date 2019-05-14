@@ -4,7 +4,7 @@ using System.Text;
 using System.Net.Mail;
 //01010100 01100101 01110011 01110100 => 'T' + 'e' + 's' + 't'
 
-namespace binaryToTextTest
+namespace ProgrammingProject
 {
     public class Decoding
     {
